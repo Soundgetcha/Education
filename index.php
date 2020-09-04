@@ -74,6 +74,30 @@
 	}
 ?>	
 			</li>
+						<li><strong>Какая строка длиннее three - три: </strong>
+<?php
+	$str1 = 'three';
+	$str2 = 'три';
+	if (strlen($str1) > mb_strlen($str2)) {
+		echo "$str1"; 
+	}
+?>	
+			</li>
+						<li><strong>Какое число больше 125 умножить на 13 плюс 7 или 223 плюс 28 умножить 2: </strong>
+<?php
+	$str1 = '125 умножить на 13 плюс 7';
+	$str2 = '223 плюс 28 умножить 2';
+	$int1 = 125;
+	$int2 = 13;
+	$int3 = 7;
+	$int4 = 223;
+	$int5 = 28;
+	$int6 = 2;
+	if ($int1 * $int2 + $int3 > $int4 + $int5 * $int6) {
+		echo "$str1";
+	}
+?>	
+			</li>
 			</ul>
 	</body>
 </html>
