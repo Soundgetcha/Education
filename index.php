@@ -38,7 +38,7 @@
 		'five' => 13,
 		'six' => 37,
 ];
-		var_export(array_diff_key($secondArr, $firstArr));
+		var_export(array_diff($secondArr, $firstArr));
 		?>
 			</li>
 			<li><strong>Найти все элементы которые присутствую в первом и отсутствуют во втором: </strong>
@@ -59,7 +59,7 @@
 		'five' => 13,
 		'six' => 37,
 ];
-		var_export(array_diff_key($firstArr, $secondArr));
+		var_export(array_diff($firstArr, $secondArr));
 ?>	
 
 
