@@ -1,92 +1,114 @@
+<html>
+	<body>
+			<ul>
+			<li><strong>Посчитать длину массива: </strong>
 <?php
-
-$study = [1, 2, 3, "dog", "apple", "true"];
-	//echo $study [3];
-	
-$study = [
-    'one' => 1,
-	'two' => 2,
-	'three' => 3,
-	'four' => 'dog',
-	'five' => 'apple',
-	'five' => 'prodigy',
-	];
-	
-	
-$study2 = [
-    1,
-	2,
-	3,
-	'three' => 3,
-	'dog',
-	'apple'
-	];	
-	
-	//var_export($study + $study2); 
-	
-	//var_export(array_values($study + $study2));
-	
-	
-$study3 = [
-    'one' => 1,
-	'two' => 2,
-	'three' => 3,
-	];	
-	
-$study4 = [
-	'two' => 2,
-	'three' => 3,
-	'one' => 1,
-	];	
-	
-$study5 = [
-
-	'two' => 2,
-	'one' => 1,
-	'three' => 3,
-	];	
-	
-	//echo $study3 ['two'];
-	//echo $study4 ['two'];
-	//echo $study5 ['two'];
-
-$arr = array_values($study3);
-$arr2 = array_values($study4);
-$arr3 = array_values($study5);
-
- //echo $arr[1];
- //echo $arr2[1];
- //echo $arr3[1];
- 
-
-	//var_export(array_keys($study));
-	
-	//var_export(array_slice($study, 2, 4));
-	
-	
-$study10 = [
-	'one' => 1,
-	'two' => [
-	    'one' => 1,
-		'two' => 2,
-		'three' => 3,
-	],	
-	'three' => 3,
-	'four'  => [
+	$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
+		echo count($arr);
+		?>
+			</li>
+			<li><strong>Переместить первые 4 элемента массива в конец массива: </strong>
+<?php
+	$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
+		var_export(array_reverse($arr));
+?>	
+			</li>
+			<li><strong>Получить сумму 4,5,6 элемента: </strong>
+<?php
+	$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
+	list($a, $b, $c, $d, $e, $f, $g, $k, $l) = $arr;
+		echo $d + $e + $f;
+?>
+			</li>
+			<li><strong>Найти все элементы которые отсутствуют в первом массиве и присутствуют во втором: </strong>
+<?php
+	$firstArr = [
 		'one' => 1,
 		'two' => 2,
 		'three' => 3,
-	]
-	];
-	 
-	foreach($study10 as $key => $value) {
-		if (is_array($study10[$key])) {
-			foreach($study10[$key] as $key1 => $value1) {
-				echo $value1;
-			}
-		} else {
-			echo $value;
-		}
-	}
-	
-?>
+		'foure' => 5,
+		'five' => 12,
+];
+
+	$secondArr = [
+		'one' => 1,
+		'seven' => 22,
+		'three' => 32,
+		'foure' => 5,
+		'five' => 13,
+		'six' => 37,
+];
+		var_export(array_diff($secondArr, $firstArr));
+		?>
+			</li>
+			<li><strong>Найти все элементы которые присутствую в первом и отсутствуют во втором: </strong>
+<?php
+	$firstArr = [
+		'one' => 1,
+		'two' => 2,
+		'three' => 3,
+		'foure' => 5,
+		'five' => 12,
+];
+
+	$secondArr = [
+		'one' => 1,
+		'seven' => 22,
+		'three' => 32,
+		'foure' => 5,
+		'five' => 13,
+		'six' => 37,
+];
+		var_export(array_diff($firstArr, $secondArr));
+?>	
+
+
+			</li>
+			<li><strong>Найти все элементы значения которых совпадают: </strong>
+<?php
+	$firstArr = [
+		'one' => 1,
+		'two' => 2,
+		'three' => 3,
+		'foure' => 5,
+		'five' => 12,
+];
+
+	$secondArr = [
+		'one' => 1,
+		'seven' => 22,
+		'three' => 32,
+		'foure' => 5,
+		'five' => 13,
+		'six' => 37,
+];
+	$result = array_intersect($firstArr, $secondArr);
+		var_export($result);
+?>	
+			</li>
+			<li><strong>Найти все элементы значения которых отличается: </strong>
+<?php
+	$firstArr = [
+		'one' => 1,
+		'two' => 2,
+		'three' => 3,
+		'foure' => 5,
+		'five' => 12,
+];
+
+	$secondArr = [
+		'one' => 1,
+		'seven' => 22,
+		'three' => 32,
+		'foure' => 5,
+		'five' => 13,
+		'six' => 37,
+];
+	$result = array_diff($firstArr, $secondArr);
+		var_export($result);
+?>	
+			</li>
+			</ul>
+
+	</body>
+</html>
