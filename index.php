@@ -1,114 +1,32 @@
-<html>
-	<body>
-			<ul>
-			<li><strong>Посчитать длину массива: </strong>
 <?php
-	$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
-		echo count($arr);
-		?>
-			</li>
-			<li><strong>Переместить первые 4 элемента массива в конец массива: </strong>
-<?php
-	$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
-		var_export(array_reverse($arr));
-?>	
-			</li>
-			<li><strong>Получить сумму 4,5,6 элемента: </strong>
-<?php
-	$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
-	list($a, $b, $c, $d, $e, $f, $g, $k, $l) = $arr;
-		echo $d + $e + $f;
+
+echo "1) Создать функцию определяющую какой тип данных ей передан и выводящей соответствующее сообщение, если данные не переданы то вывести соответствующее сообщение. <br />";
+$var = [1990, 56, "face", 14.1];
+	function type($var) {
+		if(null==$var) {
+			echo 'Ответ: ' .   "Данные не переданы";
+		} 
+		else {
+			echo 'Ответ: ' .   gettype($var), "\n";
+		}
+	}
+	type($var);
+
+
+
+echo "<br> 2) Создать функцию которая считает все буквы b в переданной строке, в случае если передается не строка функция должна возвращать false. <br />";
+$var = "baby boom bada boom";
+
+	function text($var)
+{
+	if (gettype($var)=="string") { 
+	preg_match_all('/b/', $var, $matches);
+		echo 'Ответ: ' .  count($matches[0]) ."<br />";
+	}
+	else {
+		echo 'Ответ: ' .   "false"  ."<br />";
+	}
+}
+	text($var);
+
 ?>
-			</li>
-			<li><strong>Найти все элементы которые отсутствуют в первом массиве и присутствуют во втором: </strong>
-<?php
-	$firstArr = [
-		'one' => 1,
-		'two' => 2,
-		'three' => 3,
-		'foure' => 5,
-		'five' => 12,
-];
-
-	$secondArr = [
-		'one' => 1,
-		'seven' => 22,
-		'three' => 32,
-		'foure' => 5,
-		'five' => 13,
-		'six' => 37,
-];
-		var_export(array_diff($secondArr, $firstArr));
-		?>
-			</li>
-			<li><strong>Найти все элементы которые присутствую в первом и отсутствуют во втором: </strong>
-<?php
-	$firstArr = [
-		'one' => 1,
-		'two' => 2,
-		'three' => 3,
-		'foure' => 5,
-		'five' => 12,
-];
-
-	$secondArr = [
-		'one' => 1,
-		'seven' => 22,
-		'three' => 32,
-		'foure' => 5,
-		'five' => 13,
-		'six' => 37,
-];
-		var_export(array_diff($firstArr, $secondArr));
-?>	
-
-
-			</li>
-			<li><strong>Найти все элементы значения которых совпадают: </strong>
-<?php
-	$firstArr = [
-		'one' => 1,
-		'two' => 2,
-		'three' => 3,
-		'foure' => 5,
-		'five' => 12,
-];
-
-	$secondArr = [
-		'one' => 1,
-		'seven' => 22,
-		'three' => 32,
-		'foure' => 5,
-		'five' => 13,
-		'six' => 37,
-];
-	$result = array_intersect($firstArr, $secondArr);
-		var_export($result);
-?>	
-			</li>
-			<li><strong>Найти все элементы значения которых отличается: </strong>
-<?php
-	$firstArr = [
-		'one' => 1,
-		'two' => 2,
-		'three' => 3,
-		'foure' => 5,
-		'five' => 12,
-];
-
-	$secondArr = [
-		'one' => 1,
-		'seven' => 22,
-		'three' => 32,
-		'foure' => 5,
-		'five' => 13,
-		'six' => 37,
-];
-	$result = array_diff($firstArr, $secondArr);
-		var_export($result);
-?>	
-			</li>
-			</ul>
-
-	</body>
-</html>
