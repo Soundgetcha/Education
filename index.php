@@ -5,8 +5,8 @@ echo '<br>';
 
 class First 
 {
-	public $tip = 10;
-	public $top =  100;
+	protected $tip = 10;
+	protected $top =  100;
 	
 	public function getTip()
 	{
